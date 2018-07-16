@@ -25,7 +25,7 @@ func AttachStart(){
 
 func attachAllLocation(game_id string,palyer_id string,allAttackLocation [][]int){
 	ggameState := getMapInfo(game_id)
-	if (ggameState.State != 2 || ggameState.State != 3){
+	if (ggameState.State != 2 && ggameState.State != 3 && ggameState.State != 0){
 		var waitGroup sync.WaitGroup
 		for _,location := range allAttackLocation {
 			fmt.Println("开始攻击",location)
@@ -89,7 +89,7 @@ func powerAllAttach(mapRows []string)(allAttackLocation [][]int){
 			value,_ := strconv.Atoi(string(valueS))
 			if value == 1 {
 				tmpLocation :=[]int{xIndex,yindex}
-				fmt.Println("ssaa ",tmpLocation)
+				//fmt.Println("ssaa ",tmpLocation)
 				allAttackLocation = append(allAttackLocation, tmpLocation)
 			}
 			//fmt.Println("id is %d,%s,%d",yindex,xIndex,value)
