@@ -249,7 +249,7 @@ func Attack(gameId string,playerId string,attachInfo []int)(err error) {
 	response,_ := client.Do(request)
 	fmt.Println("attack请求发出")
 	if response.StatusCode != 200 {
-		fmt.Println("attach 发送失败")
+		fmt.Println("attack 发送失败")
 		err = fmt.Errorf("攻击请求失败")
 		return
 	}

@@ -31,6 +31,7 @@ func attachAllLocation(game_id string,palyer_id string,allAttackLocation [][]int
 			fmt.Println("开始攻击",location)
 			waitGroup.Add(1)
 			go threadAttach(game_id,palyer_id,location,&waitGroup)
+
 		}
 		waitGroup.Wait()
 		fmt.Println("开始查看状态")
